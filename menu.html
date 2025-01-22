@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Menu</title>
     <style>
         body {
             display: flex;
@@ -32,35 +32,8 @@
             background-color: #0056b3;
         }
     </style>
-
-    <!-- Add Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-
-    <script>
-        // Initialize Firebase with your project's config
-        var firebaseConfig = {
-            apiKey: "AIzaSyADKhOQH4zc8hG5Muxg-TOhg0BSRLhN76c",
-            authDomain: "knitten-9d0f9.firebaseapp.com",
-            projectId: "knitten-9d0f9",
-            storageBucket: "knitten-9d0f9.firebasestorage.app",
-            messagingSenderId: "401591392302",
-            appId: "1:401591392302:web:3dc8db5da7d34f556ca7bf"
-        };
-        firebase.initializeApp(firebaseConfig);
-
-        // Function to check if a user is logged in or not
-        function checkAuthState() {
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (!user) {
-                    // User is not signed in, redirect to the login page
-                    window.location.href = "login.html";
-                }
-            });
-        }
-    </script>
 </head>
-<body onload="checkAuthState()">
+<body>
     <h1>Knitten</h1>
     <button class="menu-button" onclick="location.href='game.html'">Play</button>
     <button class="menu-button" onclick="location.href='howtoplay.html'">How to Play</button>
