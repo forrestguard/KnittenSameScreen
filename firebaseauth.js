@@ -28,8 +28,6 @@ import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11
     event.preventDefault();
     const email=document.getElementById('rEmail').value;
     const password=document.getElementById('rPassword').value;
-    const firstName=document.getElementById('fName').value;
-    const lastName=document.getElementById('lName').value;
 
     const auth=getAuth();
     const db=getFirestore();
@@ -39,8 +37,6 @@ import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11
         const user=userCredential.user;
         const userData={
             email: email,
-            firstName: firstName,
-            lastName:lastName
         };
         showMessage('Account Created Successfully', 'signUpMessage');
         const docRef=doc(db, "users", user.uid);
