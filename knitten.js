@@ -100,6 +100,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (currentTurnStep === 4) {
             checkCustomPatterns();
+        
+            
+            const player1PlayedCards = document.getElementById('player1-played').children.length;
+            const player2PlayedCards = document.getElementById('player2-played').children.length;
+            if (player1PlayedCards >= 6 || player2PlayedCards >= 6 || bag.length === 0) {
+                if (shuffledDeck.length === 0) {
+                    alert('Game over!');
+                }
+                checkWinner(); 
+                return; 
+            }
+            
             currentTurnStep = 1;
             currentPlayer = currentPlayer === 1 ? 2 : 1;
         }
@@ -164,10 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function drawCard() {
         if (currentTurnStep !== 1) {
             alert('It is not time to draw a card.');
-            return;
-        }
-        if (shuffledDeck.length === 0) {
-            alert('No cards left in the deck!');
             return;
         }
         const drawnCard = shuffledDeck.pop();
@@ -289,10 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTurnStep !== 2) {
             alert('It is not time to draw a yarn.');
             return;
-        }
-        if (bag.length === 0) {
-            alert('The game is over! All yarn balls are used.');
-            return null;
         }
         const randomIndex = Math.floor(Math.random() * bag.length);
         const color = bag.splice(randomIndex, 1)[0];
@@ -694,11 +698,11 @@ document.addEventListener('DOMContentLoaded', () => {
    
     function checkWinner() {
         if (scores[1] > scores[2]) {
-            console.log("Player 1 won!");
+            alert("Player 1 won!");
         } else if (scores[1] < scores[2]) {
-            console.log("player 2 won!");
+            alert("player 2 won!");
         } else {
-            console.log(" Tie!");
+            alert(" Tie!");
         }
     }
     
