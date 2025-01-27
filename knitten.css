@@ -4,11 +4,45 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #fcedca;
 }
 
 h1, h2, h3 {
     margin: 10px;
+}
+
+#current-info {
+    position: fixed; /* Sabit pozisyon */
+    top: 10px; /* Üstten boşluk */
+    left: 10px; /* Soldan boşluk */
+    background-color: rgba(255, 255, 255, 0.8); /* Hafif şeffaf arka plan */
+    padding: 10px; /* İçerik için boşluk */
+    border-radius: 5px; /* Köşeleri yuvarlat */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Hafif gölge (isteğe bağlı) */
+    z-index: 1000; /* Diğer elemanların altında kalmasını önler */
+}
+
+#current-info h2, #current-info h3 {
+    margin: 0; /* Varsayılan boşlukları kaldır */
+    font-size: 32px; /* Yazı boyutlarını ayarla */
+}
+
+#score-info {
+    position: fixed; /* Sağ üstte sabit */
+    top: 10px;
+    right: 10px; /* Sağdan boşluk */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: right; /* Yazıları sağa hizala */
+}
+
+#score-info div {
+    margin: 0;
+    font-size: 28px;
+    margin-bottom: 5px; /* Yazılar arasında boşluk */
 }
 
 .player-hand {
@@ -23,9 +57,7 @@ h1, h2, h3 {
     height: 150px;
     background-size: cover;
     background-position: center;
-    border: 2px solid #000;
-    border-radius: 8px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .card.red.L { background-image: url('kartlar/Card_Red_L.png'); }
@@ -100,42 +132,53 @@ h1, h2, h3 {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    gap: 5px;
+    gap: 5px; /* Hücreler arasındaki boşluk */
     background-color: lightgray;
-    border: 2px solid black;
+    border: 5px solid rgb(158, 110, 43);
     margin: 20px auto;
     width: max-content;
     background-image: url('kartlar/Board.png'); 
-    background-size: cover;
+    background-size: 109%; /* Görseli kenarların dışına taşır */
+    background-position: center; /* Görselin tam ortalanmasını sağlar */
 }
 
 .cell {
     width: 100px;
     height: 100px;
-    border: 1px solid #000;
+    border: 0px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background-color: #ffffff00;
     font-size: 24px;
     background-size: cover;
 }
 
-#draw-yarn-btn, #draw-card-btn {
-    font-size: 16px;
+#button-container {
+    display: flex;
+    flex-direction: column; /* Butonları dikey yerleştirir */
+    position: absolute; /* Konumu ayarlamak için gerekli */
+    top: 50%; /* Yatay eksende ortalar */
+    left: 10%; /* Soldan %10 mesafe bırakır */
+    transform: translateY(-50%); /* Dikey ortalamayı tamamlar */
+    gap: 10px; /* Butonlar arasında boşluk */
+}
+
+#draw-card-btn, #draw-yarn-btn {
+    font-size: 24px;
     padding: 10px 20px;
-    margin: 20px;
     cursor: pointer;
     background-color: #6a89cc;
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-#draw-yarn-btn:hover, #draw-card-btn:hover {
+#draw-card-btn:hover, #draw-yarn-btn:hover {
     background-color: #4a69bd;
 }
+
 
 .controls {
     position: absolute;
@@ -152,6 +195,7 @@ h1, h2, h3 {
 
 .control-btn {
     pointer-events: all;
+    color: rgb(0, 0, 0);
     background: none;
     border: none;
     font-size: 24px;
@@ -198,16 +242,6 @@ h1, h2, h3 {
 
 .control-btn[data-col="2"] {
     left: 220px;
-}
-
-#draw-yarn-btn {
-    position: absolute;
-    left: 100px; 
-    top: 50%; 
-    transform: translateY(-50%); 
-    font-size: 24px;
-    padding: 10px 50px;
-    cursor: pointer;
 }
 
 #drawn-yarn-container {

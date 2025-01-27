@@ -7,36 +7,79 @@
     <style>
         body {
             display: flex;
-            flex-direction: column;
+            justify-content: flex-end;
             align-items: center;
-            justify-content: center;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background: url('kartlar/Menu_arka.png') no-repeat center center fixed;
+            background-size: cover;
         }
 
-        .menu-button {
-            padding: 15px 30px;
-            margin: 10px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 20px;
+            gap: 50px;
+        }
+
+        .menu-item {
+            width: 450px; /* Görsellerin genişliğini ayarlayın */
+            height: auto;
             cursor: pointer;
-            background-color: #007BFF;
-            color: white;
-            transition: background-color 0.3s ease;
         }
 
-        .menu-button:hover {
-            background-color: #0056b3;
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.1); /* Hover efekti: Görsel büyür */
+        }
+
+        /* Görsel değişimlerini hover durumlarında ayarla */
+        .menu-item.play img {
+            content: url('kartlar/Play.png');
+        }
+
+        .menu-item.play:hover img {
+            content: url('kartlar/Play_trigger.png');
+        }
+
+        .menu-item.htp img {
+            content: url('kartlar/HTP.png');
+        }
+
+        .menu-item.htp:hover img {
+            content: url('kartlar/HTPTrigger.png');
+        }
+
+        .menu-item.credits img {
+            content: url('kartlar/Credits.png');
+        }
+
+        .menu-item.credits:hover img {
+            content: url('kartlar/Credits_trigger.png');
         }
     </style>
 </head>
 <body>
-    <h1>Knitten</h1>
-    <button class="menu-button" onclick="location.href='game.html'">Play</button>
-    <button class="menu-button" onclick="location.href='howtoplay.html'">How to Play</button>
-    <button class="menu-button" onclick="location.href='credits.html'">Credits</button>
+    <div class="menu-container">
+        <!-- Play butonu -->
+        <div class="menu-item play" onclick="location.href='game.html'">
+            <img src="kartlar/Play.png" alt="Play">
+        </div>
+        <!-- How to Play butonu -->
+        <div class="menu-item htp" onclick="location.href='howtoplay.html'">
+            <img src="kartlar/HTP.png" alt="How to Play">
+        </div>
+        <!-- Credits butonu -->
+        <div class="menu-item credits" onclick="location.href='credits.html'">
+            <img src="kartlar/Credits.png" alt="Credits">
+        </div>
+    </div>
 </body>
 </html>

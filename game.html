@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <h2 id="current-player">Current Player: 1</h2>
-    <h3 id="turn-step">Step 1: Draw a Card</h3>
+    <div id="current-info">
+        <h2 id="current-player">Current Player: 1</h2>
+        <h3 id="turn-step">Step 1: Draw a Card</h3>
+    </div>
+    <div id="score-info">
+        <div id="player1-score">Player 1 Score: 0</div>
+        <div id="player2-score">Player 2 Score: 0</div>
+        <div id="yarn-count-display">Remaining Yarns: 0</div>
+    </div>
     <link rel="stylesheet" href="knitten.css">
     <script src="knitten.js"></script>
     
@@ -16,7 +23,6 @@
     <h1>Player 2 Cards</h1>
     <div id="player2-hand" class="player-hand"></div>
     <div id="drawn-yarn-container"></div>
-    <button id="draw-card-btn">Draw Card</button>
 
     <div id="board-container">
         <div id="board"></div>
@@ -41,11 +47,10 @@
     <h3>Player 2 played cards</h3>
     
     <div id="player2-played" class="played-cards"></div>
-    <div id="player1-score">Player 1 Score: 0</div>
-    <div id="player2-score">Player 2 Score: 0</div>
-    
-    <button id="draw-yarn-btn">Yarn</button>
-    <div id="yarn-count-display">Remaining Yarns: 0</div>
+    <div id="button-container">
+        <button id="draw-card-btn">Draw Card</button>
+        <button id="draw-yarn-btn">Draw Yarn</button>
+    </div>    
     <script src="knitten.js"></script>
 
 </body>

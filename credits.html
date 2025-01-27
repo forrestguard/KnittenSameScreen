@@ -8,12 +8,13 @@
         body {
             margin: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f4f4f9;
+            background-color: #f1cb73; /* Updated background color */
             font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden; /* Prevent page overflow */
         }
 
         .back-button {
@@ -28,20 +29,29 @@
             background-color: #007BFF;
             color: white;
             transition: background-color 0.3s ease;
+            z-index: 10;
         }
 
         .back-button:hover {
             background-color: #0056b3;
         }
 
+        .credits-container {
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scrolling if needed */
+        }
+
         .credits-image {
-            max-width: 90%;
-            height: auto;
+            width: 100%; /* Set the width to fit the container */
+            height: auto; /* Maintain aspect ratio */
         }
     </style>
 </head>
 <body>
     <button class="back-button" onclick="location.href='menu.html'">Back</button>
-    <img src="credits.png" alt="Credits" class="credits-image">
+    <div class="credits-container">
+        <img src="kartlar/TeamHoneyPin.png" alt="Credits" class="credits-image">
+    </div>
 </body>
 </html>

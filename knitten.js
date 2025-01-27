@@ -189,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const playerHandContainer = document.getElementById(`player${player}-hand`);
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card', card.color, card.shape);
-        cardDiv.textContent = `${card.shape} (${card.color})`;
         playerHandContainer.appendChild(cardDiv);
     }
     
@@ -269,6 +268,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         checkCustomPatterns();
         advanceTurnStep();
+        const container = document.getElementById('drawn-yarn-container');
+        container.innerHTML = ''; // İçeriği temizler
+        drawnYarn = null; // Çekilen yarn'ı sıfırlar
     }
 
     function updateRow(row) {
