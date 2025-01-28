@@ -7,47 +7,57 @@ body {
     background-color: #fcedca;
 }
 
-h1, h2, h3 {
+h1, h2 {
     margin: 10px;
+}
+h3 {
+    margin: 40px;
 }
 
 #current-info {
-    position: fixed; /* Sabit pozisyon */
-    top: 10px; /* Üstten boşluk */
-    left: 10px; /* Soldan boşluk */
-    background-color: rgba(255, 255, 255, 0.8); /* Hafif şeffaf arka plan */
-    padding: 10px; /* İçerik için boşluk */
-    border-radius: 5px; /* Köşeleri yuvarlat */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Hafif gölge (isteğe bağlı) */
-    z-index: 1000; /* Diğer elemanların altında kalmasını önler */
+    position: fixed; 
+    top: 10px; 
+    left: 10px; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    z-index: 1000; 
 }
 
 #current-info h2, #current-info h3 {
-    margin: 0; /* Varsayılan boşlukları kaldır */
-    font-size: 32px; /* Yazı boyutlarını ayarla */
+    margin: 0; 
+    font-size: 32px; 
 }
 
 #score-info {
-    position: fixed; /* Sağ üstte sabit */
+    position: fixed; 
     top: 10px;
-    right: 10px; /* Sağdan boşluk */
+    right: 10px; 
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    text-align: right; /* Yazıları sağa hizala */
+    text-align: right; 
 }
 
 #score-info div {
     margin: 0;
     font-size: 28px;
-    margin-bottom: 5px; /* Yazılar arasında boşluk */
+    margin-bottom: 5px; 
 }
 
 .player-hand {
     display: flex;
     gap: 10px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.played-cards {
+    display: flex;
+    gap: 50px;
     margin: 20px auto;
     justify-content: center;
 }
@@ -132,14 +142,14 @@ h1, h2, h3 {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    gap: 5px; /* Hücreler arasındaki boşluk */
+    gap: 5px; 
     background-color: lightgray;
     border: 5px solid rgb(158, 110, 43);
     margin: 20px auto;
     width: max-content;
     background-image: url('kartlar/Board.png'); 
-    background-size: 109%; /* Görseli kenarların dışına taşır */
-    background-position: center; /* Görselin tam ortalanmasını sağlar */
+    background-size: 109%; 
+    background-position: center; 
 }
 
 .cell {
@@ -156,12 +166,12 @@ h1, h2, h3 {
 
 #button-container {
     display: flex;
-    flex-direction: column; /* Butonları dikey yerleştirir */
-    position: absolute; /* Konumu ayarlamak için gerekli */
-    top: 50%; /* Yatay eksende ortalar */
-    left: 10%; /* Soldan %10 mesafe bırakır */
-    transform: translateY(-50%); /* Dikey ortalamayı tamamlar */
-    gap: 10px; /* Butonlar arasında boşluk */
+    flex-direction: column; 
+    position: absolute; 
+    top: 50%; 
+    left: 10%;
+    transform: translateY(-50%); 
+    gap: 10px; 
 }
 
 #draw-card-btn, #draw-yarn-btn {
@@ -205,11 +215,11 @@ h1, h2, h3 {
 }
 
 .control-btn[data-direction="left"] {
-    left: -30px;
+    left: -45px;
 }
 
 .control-btn[data-direction="right"] {
-    right: -30px;
+    right: -45px;
 }
 
 .control-btn[data-direction="up"] {
@@ -221,27 +231,27 @@ h1, h2, h3 {
 }
 
 .control-btn[data-row="0"] {
-    top: 10px;
+    top: 40px;
 }
 
 .control-btn[data-row="1"] {
-    top: 115px;
+    top: 145px;
 }
 
 .control-btn[data-row="2"] {
-    top: 220px;
+    top: 250px;
 }
 
 .control-btn[data-col="0"] {
-    left: 10px;
+    left: 40px;
 }
 
 .control-btn[data-col="1"] {
-    left: 115px;
+    left: 145px;
 }
 
 .control-btn[data-col="2"] {
-    left: 220px;
+    left: 250px;
 }
 
 #drawn-yarn-container {

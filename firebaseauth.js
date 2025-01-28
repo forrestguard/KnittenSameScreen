@@ -11,7 +11,6 @@ import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11
     appId: "1:401591392302:web:a136dd429a1db2156ca7bf"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
  function showMessage(message, divId){

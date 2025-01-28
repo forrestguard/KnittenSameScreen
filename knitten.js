@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateScore(player, points) {
         if (scores[player] !== undefined) {
             scores[player] += points;
-            console.log(`Oyuncu ${player}'ın yeni skoru: ${scores[player]}`);
+            console.log(`Player ${player}'s new score: ${scores[player]}`);
             updateScoreDisplay(player); 
         } else {
             console.log(`Geçersiz oyuncu: ${player}`);
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function moveCardToPlayed(color, shape) {
         if (!playerHasCard(currentPlayer, color, shape)) {
-            console.log(`Oyuncu ${currentPlayer} elinde ${color} ${shape} kartı yok!`);
+            console.log(`player ${currentPlayer} doesn't have ${color} ${shape} card.`);
             return;
         }
     
@@ -229,9 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardPoints = cards.find(c => c.color === color && c.shape === shape)?.points || 0;
             updateScore(currentPlayer, cardPoints);
     
-            console.log(`${color} ${shape} kartı Oyuncu ${currentPlayer}'ın oynanmış kartlarına taşındı.`);
+            console.log(`${color} ${shape} completed by player ${currentPlayer}`);
         } else {
-            console.log(`${color} ${shape} kartı bulunamadı.`);
+            console.log(`${color} ${shape} card not found.`);
         }
     }
     

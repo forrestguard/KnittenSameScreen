@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Play</title>
+    <title>Credits</title>
     <style>
         body {
             margin: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f4f4f9;
+            background-color: #f1cb73; 
             font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden; 
         }
 
         .back-button {
@@ -28,20 +29,29 @@
             background-color: #007BFF;
             color: white;
             transition: background-color 0.3s ease;
+            z-index: 10;
         }
 
         .back-button:hover {
             background-color: #0056b3;
         }
 
-        .how-to-play-image {
-            max-width: 90%;
-            height: auto;
+        .credits-container {
+            width: 100%;
+            height: 100%;
+            overflow: auto; 
+        }
+
+        .credits-image {
+            width: 100%; 
+            height: auto; 
         }
     </style>
 </head>
 <body>
     <button class="back-button" onclick="location.href='menu.html'">Back</button>
-    <img src="howtoplay.png" alt="How to Play" class="how-to-play-image">
+    <div class="credits-container">
+        <img src="kartlar/HTP_arka.png" alt="Credits" class="credits-image">
+    </div>
 </body>
 </html>
